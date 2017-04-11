@@ -1,0 +1,2 @@
+q="SELECT Id, Name, Email, Account.Name FROM Contact WHERE Account.Name LIKE '%$1%'"
+curl -G -s "https://na35.salesforce.com/services/data/v20.0/query/" -H "Authorization: Bearer $SFDC_ACCESS_TOKEN" --data-urlencode "q=$q" | json_pp

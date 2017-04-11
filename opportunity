@@ -1,0 +1,2 @@
+q="SELECT Account.Name, Id, Name, Amount, Probability, StageName, CloseDate FROM Opportunity WHERE Name LIKE '%$1%' ORDER BY amount DESC LIMIT 1"
+curl -G -s "https://na35.salesforce.com/services/data/v20.0/query/" -H "Authorization: Bearer $SFDC_ACCESS_TOKEN" --data-urlencode "q=$q" | json_pp
